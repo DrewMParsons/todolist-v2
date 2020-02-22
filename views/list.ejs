@@ -1,0 +1,31 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+
+  <div class="box">
+    <% newListItems.forEach(function(item){ %>
+
+<!-- TO SET UP CHECKBOX TO DELETE:
+1) WRAP in A FORM, set an action and method
+2) give checkbox a name, and set onChange to this.form.submit()
+3) add the item ID to the value of checkbox, so we know which item is selected
+4) hidden input is created to send back the list name for deletion-->
+
+      <form class="" action="/delete" method="post">
+        <div class="item">
+          <input type="checkbox" name="checkbox" value="<%=item._id %>" onChange="this.form.submit()">
+          <p><%=item.name%></p>
+        </div>
+        <input type="hidden" name="listName" value="<%=listTitle%>"></input>
+    </form>
+    <%})%>
+
+      <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value="<%=listTitle %>"">+</button>
+      </form>
+  </div>
+
+<%- include("footer") -%>
