@@ -39,13 +39,13 @@ const List = mongoose.model("List", listSchema);
 
 // Defaults
 const item1 = new Item({
-  name: "Buy food"
+  name: "These are you list items "
 });
 const item2 = new Item({
-  name: "Clean butt"
+  name: "Click square on left to delete"
 });
 const item3 = new Item({
-  name: "Take a nap"
+  name: "Add new items on line below"
 });
 const defaultItems = [item1, item2, item3];
 
